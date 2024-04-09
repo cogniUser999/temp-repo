@@ -1,0 +1,55 @@
+Day 1
+Is selenium capable of automating web applications ?
+CRM - any websites/ any aaplications that sells anything.
+
+why eclipse only for selenium automation ?
+
+what is DOM ? why DOM ?
+
+
+
+
+Day 2
+major methods of finding elements on apps using DOM - ID/Xpath/Name
+
+Xpath and Types of Xpath
+
+what is assertion used for in Selenium ?
+
+what is the difference between findElement and findElements ?
+
+
+Day 3
+what are different types of waits in Selenium ?
+
+Exceptions and its types in detail in Selenium
+
+when to use Javascript Executer ?
+
+
+Day 4
+how to handle alerts in Selenium -  simple alert/ prompt alert/ confirmation alert ?
+
+what are different alert methods available in Selenium ?
+
+difference between pop-up and alerts
+
+how to perform drag and drop in Selenium ? [--actionBuilder() class]
+
+
+Day 5
+how to take a screenshot using seleniun ?
+
+
+Day 6
+types of pop-ups in Selenium
+
+difference between web pop-ups and system pop-ups
+
+difference between pop-up and alerts
+
+how to handle System pop-ups in Selenium ? (autoIT)
+
+|------------------------|
+| Scalar Function in SQL |
+|------------------------|

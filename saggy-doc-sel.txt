@@ -1,0 +1,1179 @@
+S̳e̳l̳e̳n̳i̳u̳m̳
+
+Seleniuim :- Selenium is an open-source suite of tools and libraries that is used for browser automation.
+	use-cases of Selenium :-
+		|-> It allows users to test their websites functionally on different browsers.
+		|-> Perform Cross browser testing to check if the website functions consistently across different browsers.
+		|-> It provides a single interface that lets you write test scripts in programming languages like Ruby, Java, NodeJS, PHP, Perl, Python, JavaScript, and C#, among others. Selenium is very extensible and can be integrated with other tools and frameworks like TestNG, JUnit, Cucumber, etc.
+
+
+Importance of Testing in Selenium :- Manual testing can be time-consuming and prone to human errors. Selenium Automation allows tests to be executed quickly and accurately, reducing the likelihood of human mistakes and ensuring consistent test results.
+	|-> Language Support: Selenium allows you to create test scripts in different languages like Ruby, Java, PHP, Perl, Python, JavaScript, and C#, among others.
+	|-> Browser Support: Selenium enables you to test your website on different browsers such as Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Internet Explorer (IE), etc.
+	|-> Scalability: Automated testing with Selenium can easily scale to cover a wide range of test cases, scenarios, and user interactions. This scalability ensures maximum test coverage of the application’s functionality.
+	|-> Reusable Test Scripts: Selenium allows testers to create reusable test scripts that can be used across different test cases and projects. This reusability saves time and effort in test script creation and maintenance.
+	|-> Parallel Testing: Selenium supports parallel test execution, allowing multiple tests to run concurrently. This helps reduce the overall testing time, making the development process more efficient.
+	|-> Documentation and Reporting: Selenium provides detailed test execution logs and reports, making it easier to track test results and identify areas that require attention.
+	|-> User Experience Testing: Selenium can simulate user interactions and behavior, allowing testers to assess the user experience and ensure that the application is intuitive and user-friendly.
+	|-> Continuous Integration and Continuous Deployment (CI/CD): Selenium can be integrated into CI/CD pipelines to automate the testing of each code change. This integration helps identify and address issues earlier in the development cycle, allowing for faster and more reliable releases.
+
+
+
+Selenium Components :-
+	|->Selenium IDE
+	|->Selenium GRID
+	|->Selenium WebDriver
+	|->Selenium RC [Deprecated]
+
+
+Selenium Grid :- Selenium Grid allows the execution of WebDriver scripts on remote machines by routing commands sent by the client to remote browser instances.
+			|-> Provide an easy way to run tests in parallel on multiple machines
+			|-> Allow testing on different browser versions
+			|-> Enable cross platform testing
+			|-> Helps to Increase or Decrease Speed of Execution Time over the Nodes
+ 
+Components of Selenium Grid :-
+	|-> Router
+	|-> Distributors
+	|-> Session Map
+	|-> New Session Queue
+	|-> Node
+	|-> Event Bus
+
+|----------------------------------------------------------------|
+|**IDE-Integrated Dev Environment is a software application that |
+| helps programmers develop softwares efficiently.		 |
+|----------------------------------------------------------------|
+
+
+Selenium WebDriver :-
+	|-> Selenium WebDriver is an important component in Selenium Testing and Automation Script.
+	|-> Selenium WebDriver is a JAVA Interface basically which is implemented using SearchContext [Interface] which extends to WebDriver [Interface] calling different class methods and functions of different WebDriver classes/interfaces.
+	|-> WebDriver is an API - Interface between two apps or mediator between two applications.
+
+
+	SearchContext() [Interface]
+		|
+		|
+		|-> extends to WebDriver() [Interface]
+
+|------------------------------------------------|
+|**initially automation was started by making a  |
+| framework/library for firefox browser		 |
+|------------------------------------------------|
+
+Firefox Browser ---> Firefox Driver(Gecko Driver)
+Chrome Browser ---> Chrome Driver(Chrome Driver)
+Edge Browser ---> Edge Driver(Edge Driver)
+Internet Explorer Browser ---> Internet Explorer Driver(IE Driver)
+
+
+|----------------------------------------------------------------------------------------|
+|**IE Driver has been DEPRECATED by Microsoft itself instead we use EDGE DRIVER.	 |
+|**Selenium RC has been DEPRECATED by Selenium itself instead we use SELENIUM WebDriver. |
+|----------------------------------------------------------------------------------------|
+
+
+API - Application Programing Interface (Logic Concerned)
+RRLC - Request Response Life Cycle by API
+
+
+WorkFlow of API :-
+
+		User--->|
+			|------>|-------------------|
+				| Programming Layer |
+				|-------------------|<--|
+				|		Response|
+				|			|
+				|Request		|
+				|------>|-----------------|
+					| Bussiness Layer |
+					|-----------------|<-----|
+					|		 Response|
+					|			 |
+					|Request		 |
+					|-------------->|----------------|
+							| Database Layer |
+							|----------------|
+
+
+workflow of Selenium WebDriver as an API :-
+
+
+User->|
+      |->|-------------------|			|---------------|			|------------------------|
+	 | Automation Script |  func req-->	|   Web Driver  |	event req-->	|	  Chrome	 |
+	 |    --statements   |----------------> |  --functions  |--------------------->	| --automated test cases |
+	 | {JAVA Application}|  <--status resp	|   --methods   |  	<--status resp	|  {Browser Application} |
+	 |-------------------|			|---------------|			|------------------------|
+					  WebDriver-API
+	
+	Automation Script is trying to connect to Chrome Browser - this is why WebDriver works as an API between two applications(JAVA Code, Browser).
+
+
+
+
+----- Setup WebDriver in IDE -----
+	|-> Selenium Client Library (.jar files).
+	|-> Browser Specific Drivers (.exe files).
+	|-> Browsers (chrome, edge, firefox...).
+
+JAR File :- JAVA ARchiving File (Multiple classes clubbed into one file)
+
+
+|-------------------------------------------------------------------------------|	|-------------------------|
+|**pom.xml : Project Object Model -> An XML representation of a Maven Project	|	| dependencies = library  |
+| held in a file named pom.xml for restoring dependencies/configurations.	|	| pom.xml = .json/.config |
+|	pom -> Pages								|	|-------------------------|
+|		|-> Test Methods						|
+|-------------------------------------------------------------------------------|	
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+M̳a̳v̳e̳n̳
+
+Maven :- Maven is essentially a project management and comprehension tool and as such provides a way to help with managing different Build Life Cycle Architectures.
+		|------------------------------|
+		|Build Life Cycle Architectures| -----> ▫️Builds
+		|------------------------------|	▫️Documentation
+							▫️Reporting
+							▫️Dependencies
+							▫️SCMs (Software Configuration Managements - Source Code/ Control Management/ Succintly/ Version Control)
+							▫️Releases
+							▫️Distribution
+
+usecase of Maven - package dependency
+	|-> Provides a uniform system and simplifies the build process.
+	|-> Increases reusability.
+	|-> Includes a centralized repository to manage jar files.
+	|-> Handles dependency management compilation, distribution, and other tasks.
+	|-> Reduces extra steps like creating jar/war/ear files, building reports, or executing Junit test cases.
+	|-> Removes the dependency of hardcode file Paths in test automation scripts.
+
+
+
+
+|=======================================================================|
+|  // Hands-On								|
+|  // Try automating a test case as specified (use maven)		|
+|									|
+|	/*								|
+|	1 - launch your browser						|
+|	2 - open url							|
+|		|-> (https://opensource-demo.orangehrmlive.com/)	|
+|	3 - provide username  - Admin					|
+|	4 - rovide password  - admin123					|
+|	5 - click on Login button					|
+|	6 - Verify the title of dashboard page				|
+|		|-> Exp title : OrangeHRM				|
+|	7 - close browser						|
+|	*/								|
+|									|
+|=======================================================================|
+|===============================================================================================================================================================|
+|	package demo1;																		|
+|																				|
+|	import org.openqa.selenium.By;																|
+|	import org.openqa.selenium.WebDriver;															|
+|	import org.openqa.selenium.chrome.ChromeDriver;														|
+|																				|
+|	/*																			|
+|	* Test case																		|
+|	--------																		|
+|	1) Launch browser																	|
+|	2) open url																		|
+|		https://opensource-demo.orangehrmlive.com/													|
+|	3) Provide username  - Admin																|
+|	4) Provide password  - admin123																|
+|	5) Click on Login button																|
+|	6) Verify the title of dashboard page															|
+|		Exp title : OrangeHRM																|
+|	7) close browser																	|
+|	 * */																			|
+|	public class test1_Orange {																|
+|																				|
+|		public static void main(String[] args) throws InterruptedException {										|
+|			// System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver_win32\\chromedriver.exe");					|
+|																				|
+|			// WebDriverManager.chromedriver().setup(); // with new versions of WebDriverManager you don't need ton specify this statement		|
+|																				|
+|			// ChromeDriver driver = new ChromeDriver(); // we must NOT use this method because this invokes only one browser			|
+|			// launch browser															|
+|			boolean flag = false;															|
+|			WebDriver driver = new ChromeDriver(); // this can invoke all browsers at once								|
+|		        // open url																|
+|			String url = "https://opensource-demo.orangehrmlive.com/";										|
+|	        	driver.get(url);															|
+|																				|
+|			// This method will keep script waited for 5 seconds so the page gets loaded completely with HTML/Css and Js.				|
+|			Thread.sleep(5000);															|
+|																				|
+|			driver.findElement(By.name("username")).sendKeys("Admin");										|
+|			driver.findElement(By.name("password")).sendKeys("admin123");										|
+|			driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();			|
+|			flag = true;																|
+|			if(flag){																|
+|				System.out.println("Exit Status(1)");												|
+|			}else{																	|
+|				System.out.println("Exit Status(0)");												|
+|			}																	|
+|			driver.quit();																|
+|		}																		|
+|	}																			|
+|																				|
+|===============================================================================================================================================================|
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+L̳o̳c̳a̳t̳o̳r̳s̳
+
+Locators in Selenium :- Sepecific way to identify WebElements in DOM Structure.
+
+|***********************************************************************************************************************************|
+| LOCATOR STRATEGIES : A locator is a way to identify elements on a page. It is the argument passed to the Finding element methods. |
+|***********************************************************************************************************************************|
+
+Types of Traditional Locators :-
+		|-> class name : Locates elements whose class name contains the search value (compound class names are not permitted)
+		|-> css selector : Locates elements matching a CSS selector
+		|-> id : Locates elements whose ID attribute matches the search value
+		|-> name : Locates elements whose NAME attribute matches the search value
+		|-> link text : Locates anchor elements whose visible text matches the search value
+		|-> partial link : Locates anchor elements whose visible text contains the search value. If multiple elements are matching, only the first one will be selected
+		|-> ṭag name : Locates elements whose tag name matches the search value
+		|-> xpath : Locates elements matching an XPath expression
+
+|-----------------------		Locators in Selenium in Detail :-		-----------------------|
+	class name --->
+		|-------------------------------------------------------------------------------------|
+		| <input class="information" type="text" id="lname" name="lname" value="Doe"><br><br> |
+		|-------------------------------------------------------------------------------------|
+				|
+				| syntax for locating element
+				V
+		|-------------------------------------------------------|
+		| WebDriver driver = new ChromeDriver(); 		|
+		| driver.findElement(By.className("information")); 	|
+		|-------------------------------------------------------|
+
+
+	css selector --->
+		|--------------------------------------------------------------------------------------|
+		| <input class="information" type="text" id="fname" name="fname" value="Jane"><br><br> |
+		|--------------------------------------------------------------------------------------|
+				|
+				| syntax for locating element
+				V
+		|-------------------------------------------------------|
+		| WebDriver driver = new ChromeDriver(); 		|
+		| driver.findElement(By.cssSelector("#fname")); 	|
+		|-------------------------------------------------------|
+
+	id --->
+		|-------------------------------------------------------------------------------------|
+		| <input class="information" type="text" id="lname" name="lname" value="Doe"><br><br> |
+		|-------------------------------------------------------------------------------------|
+				|
+				| syntax for locating element
+				V
+		|-------------------------------------------------------|
+		| WebDriver driver = new ChromeDriver(); 		|
+		| driver.findElement(By.id("lname")); 	|
+		|-------------------------------------------------------|
+
+	link text --->
+		|--------------------------------------------------------|
+		| <a href ="www.selenium.dev">Selenium Official Page</a> |
+		|--------------------------------------------------------|
+				|
+				| syntax for locating element
+				V
+		|---------------------------------------------------------------|
+		| WebDriver driver = new ChromeDriver(); 			|
+		| driver.findElement(By.linkText("Selenium Official Page")); 	|
+		|---------------------------------------------------------------|
+
+
+	partial link --->
+		|--------------------------------------------------------|
+		| <a href ="www.selenium.dev">Selenium Official Page</a> |
+		|--------------------------------------------------------|
+				|
+				| syntax for locating element
+				V
+		|---------------------------------------------------------------|
+		| WebDriver driver = new ChromeDriver(); 			|
+		| driver.findElement(By.partialLinkText("Official Page"));	|
+		|---------------------------------------------------------------|
+
+
+	tag name --->
+		|--------------------------------------------------------|
+		| <a href ="www.selenium.dev">Selenium Official Page</a> |
+		|--------------------------------------------------------|
+				|
+				| syntax for locating element
+				V
+		|-----------------------------------------------|
+		| WebDriver driver = new ChromeDriver(); 	|
+		| driver.findElement(By.tagName("a"));	 	|
+		|-----------------------------------------------|
+
+
+	xpath  --->
+		|-----------------------------------------------------------|
+		| <input type="radio" name="gender" value="f" />Female <br> |
+		|-----------------------------------------------------------|
+				|
+				| syntax for locating element
+				V
+		|-------------------------------------------------------|
+		| WebDriver driver = new ChromeDriver(); 		|
+		| driver.findElement(By.xpath("//input[@value='f']")); 	|
+		|-------------------------------------------------------|
+
+
+
+Relative Locators : Selenium 4 introduces Relative Locators (previously called Friendly Locators). These locators are helpful when it is not easy to construct a locator for the desired element, but easy to describe spatially where the element is in relation to an element that does have an easily constructed locator.
+		|-> Selenium uses the JavaScript function getBoundingClientRect() to determine the size and position of elements on the page, and can use this information to locate neighboring elements.
+		|-> Relative locator methods can take as the argument for the point of origin, either a previously located element reference, or another locator.
+
+
+		Example :-
+			Email Address :
+			 _______________________________
+			|				|
+			|_______________________________|
+			Password :
+ 			 _______________________________
+			|				|
+			|_______________________________|
+
+			 |''''''''|	|''''''''|
+			 | Submit |	| Cancel |
+			 |........|	|........|
+	
+	Relative Locators -> Above
+				|-> By emailLocator = RelativeLocator.with(By.tagName("input")).above(By.id("password"));
+			  -> Below
+				|-> By passwordLocator = RelativeLocator.with(By.tagName("input")).below(By.id("email"));
+			  -> Left of
+				|-> By cancelLocator = RelativeLocator.with(By.tagName("button")).toLeftOf(By.id("submit"));
+			  -> Right of
+				|-> By submitLocator = RelativeLocator.with(By.tagName("button")).toRightOf(By.id("cancel"));
+			  -> Near
+				|-> By emailLocator = RelativeLocator.with(By.tagName("input")).near(By.id("lbl-email"));
+			  -> Chaining relative locators
+				|-> By submitLocator = RelativeLocator.with(By.tagName("button")).below(By.id("email")).toRightOf(By.id("cancel"));
+
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+C̳S̳S̳ S̳e̳l̳e̳c̳t̳o̳r̳s̳
+
+CSS Selectors in Selenium :- CSS Selectors in Selenium are used to identify and locate web elements based on their id, class, name, attributes and other attributes. CSS is a preferred locator strategy as it is simpler to write and faster as compared to XPath.
+	|-> By.cssSelector(String cssSelector) method is used to locate the elements in Selenium WebDriver. This method accepts a CSS Selector String as an argument which defines the selection method for the web elements.
+	|-> The CSS Selector combines an element selector and a selector value that can identify particular elements on a web page. Like XPath in Selenium, CSS selectors can locate web elements without ID, class, or Name.
+
+
+Types of CSS Selectors :-
+		|-> ID		|-----------------------------------------------------------------------|
+				| driver.findElement(By.cssSelector(“<tagname>#<id value>”));		|
+				| driver.findElement(By.cssSelector(“#<id value>”));			|
+				| driver.findElement(By.cssSelector(“<tagname>[id=’<id value>’]”));	|
+				|-----------------------------------------------------------------------|
+
+		|-> Class	|-------------------------------------------------------------------------------|
+				| driver.findElement(By.cssSelector(“<tagname>.<class value>”));		|
+				| driver.findElement(By.cssSelector(“.<class value>”));				|
+				| driver.findElement(By.cssSelector(“<tagname>[class=’<class value>’]”));	|
+				|-------------------------------------------------------------------------------|
+
+		|-> Attribute	|-----------------------------------------------------------------------|
+				| driver.findElement(By.cssSelector(“<tagname>[href=’<href value>’]”));	|
+				|-----------------------------------------------------------------------|
+
+		|-> Sub-String	|-------------------------------------------------------------------------------------------------------------------------------|
+				| driver.findElement(By.cssSelector(“<tagname>[<attribute>^=’prefix of the string’]”)); ------> a[class^='Navbar_logo_']	|
+				| driver.findElement(By.cssSelector(“<tagname>[<attribute>$=’suffix of the string’]”)); ------> a[class$='26S5Y']		|
+				| driver.findElement(By.cssSelector(“<tagname>[<attribute>*=’substring’]”));		------> a[class*='logo_']		|
+				|-------------------------------------------------------------------------------------------------------------------------------|
+
+		|-> Inner String|-------------------------------------------------------------------------------------------------------------------------------|
+				| driver.findElement(By.cssSelector(“<tagname>[<attribute>*=’substring’]”));		------> a[class*='logo_']		|
+				|-------------------------------------------------------------------------------------------------------------------------------|
+
+		|-> Combining Attributes|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+					| driver.findElement(By.cssSelector(“<tagname>#<id value>[href=’<href value>’]”)); ------> driver.findElement(By.cssSelector("a#offers[href='/offers']"));		|
+					| driver.findElement(By.cssSelector(“<tagname>.<class value>[href=’<href value>’]”)); ---> driver.findElement(By.cssSelector("a.Navbar_link__3Blki[href='/orders']"));	|
+					|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+X̳P̳a̳t̳h̳
+
+Xpath in Selenium :- XPath is a Selenium technique to navigate through a page’s HTML structure. XPath stands for XML Path Language. XPath is mainly used in XSLT but is also popularly used for navigating through the DOM of any XML-like language document using XPathExpression().
+			|-> It enables testers to navigate any document’s XML structure, which can be used on both HTML and XML documents.
+			|-> While other locators in Selenium that search for elements using tags or CSS class names are more straightforward, they may not be sufficient to select all DOM elements of an HTML document.
+			|-> XPath provides an option to search for an element within a web page dynamically, thus giving sufficient flexibility to tweak a locator to one’s advantage.
+
+Types of Xpath :-
+	|-> Absolute Xpath --->	Absolute XPath is the way of identifying an element starting from the root of the DOM. The XPath expression starts with “/” symbol.
+					|
+					| Limitation of Absolute Xpath
+					v
+				The drawback of writing Absolute XPath is length and maintainability. If there is a removal or inclusion of new element in the DOM within the absolute XPath already written, then the XPath expression will break and has to be rewritten again.
+							______________
+								|-> "/html/body/div/div/div/main/div/div/div/select"
+
+
+
+	|-> Relative Xpath --->	Relative XPath is the way of identifying an element by using its attributes for querying and can also be used for its nearest elements. Relative XPath doesn’t start with a root node; hence, this way of writing XPath is always reliable. The Path expression starts with “//”
+				______________
+					|-> "//div[@class='sort']/select"
+
+
+Different ways to Query am Element for Xpath Locaor :-
+	|-> Axes
+	|-> Functions
+
+
+		|-----------------------		Axes in Detail :-		-----------------------|
+ Axes : Axes is used when we want to query for an element using its self attributes/ nearby elements, and hierarchical building relationships.
+		
+	🟡 ancestor : ancestor is used when we want to check all the parent nodes from the context node up to root.
+		|-> "//select/ancestor::div"
+
+	🟡 ancestor-or-self : ancestor-or-self is used when we want to select all the parent nodes upto root including the context node.
+		|-> "//select/ancestor-or-self::div"
+
+	🟡 attribute : attribute is used when we want to query for an element using its attributes like id, class, value etc..
+		|-> "//div[@class='sort']/select"
+
+	🟡 child : child is used when we want to query for child element with parent reference.
+		|-> "//div[@class='sort']/child::select"
+
+	🟡 descendant : descendant is used when we want to query for all the child element and its children of a context node.
+		|-> "//div[@class='sort']/descendant::*"
+
+	🟡 descendant-or-self : descendant-or-self is used when we to query for all the child elements and its children including context node.
+		|-> "//div[@class='sort']/descendant-or-self::*"
+
+	🟡 following : following is used when we want to query for all the elements after the current context node(except the context node’s descendant).
+		|-> "//div[@class='sort']/following::*"
+
+	🟡 following-sibling : following-sibling is used when we want to query for the sibling element which belongs to same parent as context node.
+		|-> "//div[@class='sort']/following-sibling::*"
+
+	🟡 parent : parent is used when we want to query for the immediate parent of the current context node. This uses two dots “..”
+		|-> "//div[@class='sort']/.."
+
+	🟡 preceding : preceding is used when we want to query for elements that are preceding to the current context node.
+		|-> "//div[@class='sort']/preceding::*"
+
+	🟡 preceding-sibling : preceding-sibling is used when we want to query for the sibling element preceding to the current context node.
+		|-> "//div[@class='sort']/preceding-sibling::*"
+
+	🟡 self : self is used when we first query for a set of elements and then refine further for the current context node. This axis uses a single dot “.”
+		|-> "//div[@class='sort']/."
+
+
+
+		|-----------------------		Functions in Detail :-		-----------------------|
+Functions : XPath functions come in handy when we need to check the existence of elements or return elements based on their attributes, position, etc.
+
+	🟡 boolean() : This function accepts locator as parameter and it return true if the passed locator is found else returns false.
+		|-> "boolean(//div[@class='sort']/select)"
+
+	🟡 count() : This function accepts locator as parameter and returns the count of elements found.
+		|-> "count(//div[@class='sort']/select/*)"
+
+	🟡 id() : This function accepts id attribute of the element and returns the element if found.
+		|-> "id('__next')"
+
+	🟡 position() : This function is used when we need to identify an element based on its position.
+		|-> "//select/option[position()=2]"
+
+	🟡 contains() : This function is used when we need to searche for web elements that contain a specific text within an XPath expression.
+		|-> "//input[contains(@id, '" + partialAttributeValue + "')]"
+
+				|***************************************************************|
+				| NOTE : there are total 37 functions 				|
+				| 	 for detailed data -> refer to ::			|
+				| https://developer.mozilla.org/en-US/docs/Web/XPath/Functions 	|
+				|_______________________________________________________________|
+
+
+How to handle Dynamic Elements in Selenium using Xpath :-
+	🔵 using attributes : using different attributes like id, class, etc., in the webpage is one the most feasible methods of locating dynamic elements using Xpath.
+			|-> "//form[@id='loginForm']/input[3]"
+
+	🔵 using multiple attributes : In place of id, one can use any attribute and its corresponding value to locate an element with Selenium.
+			|-> "//input[@name='name'][@value='Last Name']"
+
+	🔵 using logical operators in selectors : While attributes may be sufficient to locate elements in most cases, testers may also need to use logical operators.
+			|-> "//input[@id='name' or @name='name']"
+
+	🔵 using text : One may search for an element using the text that it contains too.
+			|-> "//a[text()='Click Me']" or replace 'a' with '*' for all instance search "//*[text()='Click Me']"
+
+	🔵 using contains() : contains() is another built-in method used to locate an element based on partial text match.
+			|-> "//*[contains(text(), ‘Get started’)]"
+
+	🔵 using starts-with() : starts-with() is used to identify an element, when we are familiar with the attributes value (starting with the specified text) of an element.
+			|-> "//*[starts-with(@attribute_name,'attribute_value')]  "
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+M̳e̳t̳h̳o̳d̳s̳
+
+🔶	get methods :- Get commands are the most commonly used commands to perform the basic operations of WebDriver such as opening a browser, performing a few tasks, and then closing the browser.
+
+				get(String arg) : void
+				 |	|   |	    |
+				 V	|   |	    |
+			Method Name	V   |	    |
+				 Data Type  V	    |
+					Argument    V
+						Return Type
+
+different get methods in Selenium :-
+	
+	🟢 get() : The get() method takes a string URL as a parameter and returns nothing, opens the specified URL in the current browser window.
+		|-> "driver.get(https://www.google.com);"
+
+	🟢 getCurrentUrl() : The getCurrentURL() method takes nothing as a parameter and returns String URL of the web page currently loaded in the browser.
+		|-> "String currentUrl = driver.getCurrentUrl();" // Return type of getCurrentUrl() is String.
+
+	🟢 getTitle() : The getTitle() method takes nothing as a parameter and returns the page title of the currently loaded web page. If the web page has no title, it will return a null String.
+		|-> String title = driver.getTitle(); // Return type of getTitle() is String.
+
+	🟢 getPageSource() : This method is used to get the page source code of the currently loaded web page. No parameter required.
+		|-> "String pageSource = driver.getPageSource();" // Return type of getPageSource() is String.
+
+	🟢 getText() : This method is used to retrieve the inner text of the specified element in currently loaded web page. No parameter required.
+		|-> "driver.findElement(By.locatorName("Specified Element")).getText();"
+
+	🟢 getTagName() : This method is used to get the tagName of the WebElement returned by the findElement(By) method. No parameter required.
+		|-> "WebElement element = driver.findElement(By.locatorName("Specified Element"));	String tagName = element.getTagName();" // element is a variable whose return type is WebElement.
+
+	🟢 getCssValue() : This method is used to fetch the value of the CSS property of the given web element when it is invoked. No parameter required.
+		|-> "WebElement element = driver.findElement(By.locatorName("Specified Element"));	String cssValue = element.getCssValue();"
+
+	🟢 getAttribute() : The getAttribute() is used to get the value of the attribute of the WebElement, this method takes the String as a parameter and returns a String value.
+		|-> "WebElement element = driver.findElement(By.locatorName("Specified Element"));	String attValue = element.getAttribute();"
+
+	🟢 getSize() : The getSize() is used to fetch the width and height of the rendered element, this method does not accept any parameter but returns the size of the element on the page.
+		|-> "WebElement element = driver.findElement(By.locatorName("Specified Element"));	String size = element.getSize();"
+
+	🟢 close() : The close method takes nothing as a parameter and returns nothing, this method is used to close only the browser window that web driver is currently controlling.
+		|-> "driver.close();"
+
+	🟢 quit() : The quit() method accepts nothing as a parameter and returns nothing. this method is used to close all windows opened by WebDriver.
+		|-> "driver.quit();"
+
+
+
+🔶 navigation methods :- To navigate to a particular webpage URL.
+
+different navigational methods in Selenium :-
+
+	🟢 navigate().to() : To navigate to a particular webpage URL
+		|-> "driver.navigate().to("https://www.browserstack.com/selenium");"
+	🟢 navigate().forward() : The forward command navigates the browser forward by one page recorded in the browsing history.
+		|-> "driver.navigate().forward();"
+	🟢 navigate().back() : The back command instructs the browser to redirect to the immediate previous webpage.
+		|-> "driver.navigate().back();"
+	🟢 navigate().refresh() : The Refresh command instructs the browser to reload or refresh the current web page.
+		|-> "driver.navigate().refresh();"
+
+
+
+🔶 WebElement search methods :- To identify specific elements on a web page.
+
+different WebElement search methods in Selenium :-
+
+	🟢 By.id() : "WebDriver driver = driver.findElement (By.id(“text-box”));"
+
+	🟢 By.name() : "WebDriver driver = driver.findElement (By.name(“text-box”));"
+
+	🟢 By.cssSelector() : "WebDriver driver = driver.findElement (By.cssSelector(“text-box”));"
+
+	🟢 By.className() : "WebDriver driver = driver.findElement (By.className(“text-box”));"
+
+	🟢 By.linkText() : "WebDriver driver = driver.findElement (By.linkText(“text-box”));"
+
+	🟢 By.partialLinkText() : "WebDriver driver = driver.findElement (By.partialLinkText(“text-box”));"
+
+
+
+🔶 frames handle methods :- To interact with any web element present within any frame, one needs to switch to that particular frame.
+
+different WebElement search methods in Selenium :-
+
+	🟢 By.index() : "driver.switchTo().frame(1);"
+
+	🟢 By.id() : "driver.switchTo().frame(“resultframe”);"
+
+	🟢 By.webElement() : "WebElement iframeElement = driver.findElement(By.id("resultframe"));	driver.switchTo().frame(iframeElement);"
+
+
+
+🔶 wait command methods :-  Selenium Webdriver wait commands direct test execution to pause for a certain length of time before moving onto the next step. This enables WebDriver to check if one or more web elements are present/visible/enriched/clickable, etc.
+
+different wait methods in Selenium :-
+
+	🟢 Implicit Wait : These commands instruct the WebDriver to wait for a specified time before throwing an exception.
+		|-> "driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);"
+		|-> Example : "driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));"
+
+	🟢 Explicit Wait :  These commands instruct the WebDriver to wait until a particular condition occurs before executing further scripts.
+		|-> "WebDriverWait wait = new WebDriverWait(driver,30);"
+		|-> Example : "WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));"
+				|-> "wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'COMPOSE')]")));"
+
+Explicit Wait Implementations :-
+	|-> alertIsPresent()
+	|-> elementSelectionStateToBe()
+	|-> elementToBeClickable()
+	|-> elementToBeSelected()
+	|-> frameToBeAvaliableAndSwitchToIt()
+	|-> invisibilityOfTheElementLocated()
+	|-> invisibilityOfElementWithText()
+	|-> presenceOfAllElementsLocatedBy()
+	|-> presenceOfElementLocated()
+	|-> textToBePresentInElement()
+	|-> textToBePresentInElementLocated()
+	|-> textToBePresentInElementValue()
+	|-> titleIs()
+	|-> titleContains()
+	|-> visibilityOf()
+	|-> visibilityOfAllElements()
+	|-> visibilityOfAllElementsLocatedBy()
+	|-> visibilityOfElementLocated()
+
+⚪⚪⚪
+   |-> Link to Reference :- (https://www.browserstack.com/guide/wait-commands-in-selenium-webdriver)
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+H̳a̳n̳d̳l̳i̳n̳g̳ D̳i̳f̳f̳e̳r̳e̳n̳t̳ E̳l̳e̳m̳e̳n̳t̳s̳ i̳n̳ S̳e̳l̳e̳n̳i̳u̳m̳
+
+
+Handling CheckBoxes in Selenium :- "<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">"
+
+	🟠 Locating CheckBox : "WebElement bike=driver.findElement(By.id("#vehicle1"));"
+							OR
+				"WebElement bike=driver.findElement(By.name("vehicle1"));"
+							OR
+				"WebElement bike=driver.findElement(By.xpath("//input[@name='vehicle1' and @id='vehicle1']"));"
+							OR
+				"WebElement bike=driver.findElement(By.cssSelector("input[value='Bike']"));"
+
+	🟠 Selecting CheckBox : "bike.click();"
+
+	🟠 Selecting Multiple Options in CheckBox : if there is a need to select multiple checkboxes which have the same name/id/class attribute but different attribute values, creating different web elements and then clicking on it one by one would be cumbersome. Instead we can create a list of web elements and iterate through it sequentially and click on it.
+			|-> Steps	→ "List<WebElement> chkboxes=driver.findElements(By.cssSelector("input[type='checkbox']"));"
+					→ "int size=chkboxes.size();"
+					→ "chkboxes.get(i).click();"
+
+			|-----------------------------------------------------------------------------------------------------------------------|
+			|	Code :-														|
+			|	public class CheckBox {												|
+			|		public static void main(String args[]) {								|
+			|			WebDriver driver=new ChromeDriver();								|
+       			|			driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_checkbox");	|
+			|             		//Switch to the iframe which contains the checkboxes						|
+			|															|
+			|			driver.switchTo().frame("iframeResult");							|
+			|			List<WebElement> chkboxes=driver.findElements(By.cssSelector("input[type='checkbox']"));	|
+			|															|
+			|			int size=chkboxes.size();									|
+			|			for (int i=0; i<size; i++) {									|
+			|				chkboxes.get(i).click();								|
+			|			}												|
+			|															|
+			|		}													|
+			|															|
+			|	}														|
+			|															|
+			|-----------------------------------------------------------------------------------------------------------------------|
+
+
+	🟠 Validations on CheckBox : To validate pre and post conditions of checkbox’s state, Selenium provides certain methods
+		|-> isDisplayed() : A pre-validation for checkbox click event to check whether the checkbox is enabled or disabled on the web page. This method returns true in case element is enabled otherwise it returns false.
+		|-> isEnabled() : A pre-validation for checkbox click event to check whether the checkbox is displayed on the web page or not. It returns true if the desired element is displayed on DOM otherwise it returns false.
+		|-> isSelected() : A post-validation after the checkbox click event to check whether the checkbox is selected or not. It returns true if the element is selected, else false for deselected.
+
+		|-------------------------------------------------------------------------------|
+		|										|
+		|	driver.switchTo().frame("iframeResult");				|
+		|	WebElement car = driver.findElement(By.cssSelector("input#vehicle2"));	|
+		|	System.out.println("car.isDisplayed()" + car.isDisplayed());		|
+		|	if(car.isDisplayed()==true) {						|
+		|		car.click();							|
+		|	else{									|
+		|		System.out.println("Option is not displayed");			|
+		|	}									|
+		|										|
+		|-------------------------------------------------------------------------------|
+
+	🟠 De-Selecting CheckBox : "bike.click();"
+		|-------------------------------------------------------------------------------|
+		|										|
+		|	driver.switchTo().frame("iframeResult");				|
+		|	WebElement car = driver.findElement(By.cssSelector("input#vehicle2"));	|
+		|	System.out.println("car.isSelected()" + car.isSelected());		|
+		|	if(car.isSelected()) {							|
+		|		car.click();							|
+		|		System.out.println("Car deselected");				|
+		|	else{									|
+		|		System.out.println("Car is already deselected");		|
+		|	}									|
+		|										|
+		|-------------------------------------------------------------------------------|
+
+⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶
+
+Handling DropDowns in Selenium :- 
+
+
+⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶
+
+Alerts in Selenium :- Alert in Selenium is a message/notification box that notifies the user about some information or asks for permission to perform a certain kind of operation. It may be used for warning purposes as well.
+
+Types of Alerts in Selenium :-
+	   |-> Simple Alert : This alert is used to notify a simple warning message with an ‘OK’ button, as shown in the below snapshot.
+	   |-> Prompt Alert : This alert will ask the user to input the required information to complete the task. In the below snapshot, you can see that without This alert is basically used for the confirmation of some tasks.entering the destination for Hotel, you are not allowed to hit the search button.
+	   |-> Confirmation Alert : This alert is basically used for the confirmation of some tasks.
+
+
+Handling Alerts in Selenium :-
+
+	🟠 Void dismiss() : This method is used when the ‘Cancel’ button is clicked in the alert box.
+			|-> "driver.switchTo().alert().dismiss();"
+
+	🟠 Void accept() : This method is used to click on the ‘OK’ button of the alert.
+			|-> "driver.switchTo().alert().accept();"
+
+	🟠 String getText() : 
+			|-> "driver.switchTo().alert().getText();"
+
+	🟠 Void sendKeys(String valueToBePassed) : This method is used to send data to the alert box.
+			|-> "driver.switchTo().alert().sendKeys("Text");"
+
+
+Pop-ups in Selenium :- Popup is a window that displays or pops up on the screen due to some activity. Pop-ups are used primarily by marketers to promote offers and generate leads, but can also alert users of other things like cookie use.
+
+Types of Pop-ups in Selenium :-
+	   |-> Alert popups
+	   |-> Confirm popups
+	   |-> File upload popups
+	   |-> Hidden division popups
+	   |-> Prompt popups
+	   |-> New window popups
+
+Handling Pop-ups in Seleniun :-
+
+	🟠 driver.getWindowHandles(); : In order to handle the opened windows by Selenium Webdriver, you can use Driver.getWindowHandles() to switch between the windows.
+
+	🟠 driver.getWindowHandle(); : When the webpage is loaded, you can handle the main window by using driver.getWindowHandle(). It will handle the current window that uniquely identifies within the driver instance.
+
+
+|-------------------------------------------------------------------------------------------------------------------------------|
+| Handling a Web Dialog Box using Keyboard and Mouse functions in Selenium :- 							|
+| In Selenium, a robot class is used to handle the keyboard and mouse functions. It is used to close the pop-up window. 	|
+| Code Snippet :														|
+| Robot robot = new Robot(); 													|
+| robot.mouseMove(400.5); 													|
+| robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); 										|
+| Thread.sleep(2000); 														|
+| robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); 										|
+| driver.quit(); 														|
+|																|
+|-------------------------------------------------------------------------------------------------------------------------------|
+
+⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶
+
+Cookies in Selenium :- A cookie is a piece of information that consists of a name, value, expiry, path, etc. It helps users retain the search history, login, and other relevant details.
+
+Types of Cookies in Internet :- (Cookies can be of various types depending upon browser and network providers)
+	|-> Session Cookies
+	|-> Persistent Cookies
+	|-> Third-Party Cookies
+	|-> First-Party Cookies
+	|-> Authentication Cookies
+	|-> User Data/ Catalog Cookies
+	|-> Analytics and Web Optimisation Cookies
+
+Handling Cookies in Selenium :-
+
+	🟠 Get Cookies : Get Cookies from the current domain.
+		|-> "driver.manage().getCookies(); // Returns the List of all Cookies"
+		|-> "driver.manage().getCookieNamed(arg0); //Returns the specific cookie according to name"
+
+	🟠 Add Cookies : Adds a specific cookie into cookies. If the cookie’s domain name is blank, it is assumed that the cookie is meant for the domain of the current document.
+		|-> "driver.manage().addCookie(arg0); //Creates and adds the cookie"
+
+	🟠 Delete Cookies : Deletes the cookies for the current domain.
+		|-> "driver.manage().deleteCookie(arg0); // Deletes the specific cookie"
+		|-> "driver.manage().deleteCookieNamed(arg0); // Deletes the specific cookie according to the Name"
+		|-> "driver.manage().deleteAllCookies(); // Deletes all the cookies"
+
+
+⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶
+
+Handling Frames in Selenium :-
+
+	🟠 Locating a Frame : You can find the frame using your preferred selector and switch to it.
+		|->  "val iframe = driver.findElement(By.cssSelector("#modal>iframe"));"
+
+	🟠 Switching to Frame : You can switch to a frame using a name or id
+		|-> using name --> "driver.switchTo().frame("myframe");"
+		|-> using id   --> "driver.switchTo().frame("buttonframe");"
+
+	🟠 Querying a Frame by Index : It is also possible to use the index of the frame, such as can be queried using window.frames in JavaScript.
+		|-> "driver.switchTo().frame(1);"
+
+	🟠 Leaving a Frame : To leave an iframe or frameset, switch back to the default content.
+		|-> "driver.switchTo().defaultContent();"
+
+
+⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶⫶
+
+Window Handle :- It is a unique identifier that holds the address of all the windows. Think of it as a pointer to a window, which returns the string value. It is assumed that each browser will have a unique window handle. This window handle function helps to retrieve the handles of all windows.
+
+Handling Windows in Selenium :-
+
+	🟠 getWindowHandle() : This method helps to get the window handle of the current window. (String return type)
+		|-> 
+		
+	🟠 getWindowHandles() : This method helps to get the handles of all the windows opened. (String return type - we use Sets here)
+		|-> 
+
+	🟠 set : This method helps to set the window handles in the form of a string. (String return type)
+		|-> "set<string> allWindows = driver.getWindowHandles()"
+			|---------------------------------------------------------|
+			| driver.get.windowhandles() == driver.getWindowHandles() |
+			|---------------------------------------------------------|
+
+	🟠 switchTo() : This method helps to switch between the windows.
+		|-> "driver.switchTo().window(ChildWindow);"
+
+	🟠 switchTo().newWindow(WindowType) : This method is supported by selenium 4 only and automatically creates a new tab or window and switches to it:
+		|-> "driver.switchTo().newWindow(WindowType.TAB); // Creates a new tab"
+		|-> "driver.switchTo().newWindow(WindowType.WINDOW); // Creates a new window"
+
+	🟠 action() : This method helps in performing certain actions on the windows.
+
+	🟠 close() : We use this method majorly when we have multiple windows and we wish to close a selective window.
+
+	🟠 quit() : We use this method when we want to close all the windows opended in a particular session. It basically stops the driver instance and any further actions to WebDriver may result in an exception.  It is generally the last statement of any code.
+
+	
+⚪⚪⚪
+   |-> Bibliography : 	(https://www.browserstack.com/guide/handle-multiple-windows-in-selenium)
+			(https://toolsqa.com/selenium-webdriver/window-handle-in-selenium/)
+
+
+
+|*******************************************************************************|
+|	Iterator Class in Selenium :-						|
+|		|----------------------------------------------------------|	|
+|		| Iterator<String> iterator = allWindowHandles.iterator(); |	|
+|		|----------------------------------------------------------|	|
+|										|
+|*******************************************************************************|
+
+|***********************************************************************************************|
+|	Action Class in Selenium :-								|
+|	|-------------------------------------------------------|				|
+|	| Actions action = new Actions(driver);			|				|
+|	|-------------------------------------------------------|				|
+|												|
+|	Methods in Action Class :- 								|
+|	◉ Mouse Actions										|
+|	|-> doubleClick() : Performs double click on the element				|
+|	|-> clickAndHold() : Performs long click on the mouse without releasing it		|
+|	|-> dragAndDrop() : Drags the element from one point and drops to another		|
+|	|-> dragAndDropBy() : Drags the element from one point and drops to another, on		|
+|				a slider with specified x-coordinates and y-coordinates		|
+|	|-> moveToElement() : Shifts the mouse pointer to the center of the element		|
+|	|-> contextClick() : performs a right-click on the specified element			|
+|	|-> release() : releases the left mouse button on the specified element			|
+|												|
+|	◉ Keyboard Actions									|
+|	|-> sendKeys("StringtoSend") : sends a series of key presses to the specified element	|
+|	|-> keyDown(Keys "keyname") : holds down the specified key				|
+|	|-> keyUp(Keys "keyname") : releases the specified key					|
+|												|
+|***********************************************************************************************|
+
+⚪⚪⚪
+   |-> Bibliography : 	(https://www.browserstack.com/guide/action-class-in-selenium)
+
+⚪⚪⚪
+   |-> FAQ : What is the use of build () and perform () in actions?
+		build() :-
+		|-> 	Build and Perform are methods in the Selenium Actions class. They are used together to create and execute complex user interactions on a web page.
+			Build is used to create an instance of the Actions class and associate it with a specific WebDriver instance.
+			The methods keyDown, keyUp, click, doubleClick, contextClick, moveToElement, and dragAndDrop can be chained together to create a series of actions.
+			Once you have specified all the actions you want to perform, you can call the build method to build the Actions object.
+		
+		perform() :-
+		|-> 	Perform is used to execute the actions that were built using the build method. Once you call to perform, Selenium will execute the actions in the order that they were specified.
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+E̳x̳c̳e̳p̳t̳i̳o̳n̳ H̳a̳n̳d̳l̳i̳n̳g̳
+
+Exception Handling in Selenium WebDriver
+
+Exception :- Exception is an unusual event or an uncommon case that disrupts the flow of the program execution in real-time as well as in compile-time.
+	|-> An exception object is created when an exception is encountered, which contains debugging information such as the line number, the type of Exception, and the method hierarchy.
+	|-> Once the exception object is created and handed over to the runtime environment, this process is called “Throwing the Exception”.
+
+Types of Exceptions in Selenium
+	|-> Checked Exceptions: These exceptions are handled while writing the code itself before the compilation of the code, and hence they are examined at the compile time.
+	|-> Unchecked Exceptions: These exceptions get thrown at run time and are more catastrophic as compared to Checked Exception.
+
+
+#Selenium WebDriver consists of various Exceptions, enlisted are a few of them :-
+
+
+							|-> ElementNotSelectableException()
+							|-> ElementNotInteractableException()
+							|-> ElementNotVisibleException()
+							|-> NoSuchElementException()
+							|-> NoSuchFrameException()
+	Common Exceptions in Selenium WebDriver ------->|-> NoAlertPresentException()
+							|-> NoSuchWindowException()
+							|-> StaleElementRefrenceException()
+							|-> SessionNotFoundException()
+							|-> TimeOutException()
+							|-> WebDriverException()
+
+
+|-----------------------		Exceptions and Solutions in Detail :-		-----------------------|
+
+1 - ElementNotSelectableException() : This exception belongs to InvalidElementStateException class. This exception occurs when the web element is present on the web page but cannot be selected.
+		|-> Solution :-
+			|-> Try for other interfaces to select the element (selectByIndex, selectByVisibleText).
+			|-> A wait command can also be added to wait until the element becomes clickable.
+
+2 - ElementNotInteractableException() :  This exception is thrown when an element is present in DOM, but it is not interactable, like unable to perform any action on it such as clicking or sending keys. This happens probably when the element to be interacted with is either hidden or disabled.
+		|-> Solution :-
+			|-> Wait until the element is visible or clickable using Explicit wait.
+			|-> Scroll until the element gets in display using the Actions class.
+			|-> Use JS Executor to interact directly with the DOM.
+
+3 - ElementNotVisibleException() : Selenium throws ElementNotVisibleException when an element is present in the DOM, but it is not visible to the user.
+		|-> Solution :-
+			|-> Try to write unique locators that match with a single element only.
+			|-> Wait until the element is visible or clickable using explicit wait.
+
+4 - NoSuchElementException() : This is the most common Selenium exception which is a subclass of NotFoundException class and thrown by findElement() method of Selenium WebDriver. This exception occurs when the locators defined in the Selenium program is unable to locate the element in the DOM.
+		|-> Solution :-
+			|-> Reverify the locator by inspecting the browser and checking whether the element is present on DOM or not. Try switching to more reliable locators.
+			|-> Wait for the element to load using explicit wait.
+
+5 - NoSuchFrameException() : This exception occurs when Selenium is unable to locate the desired frame or iframe using the specified iframe identifier (By iframe id, name or index). Iframe is a web page inside a web page and to work with the iframe elements, we need to first switch to the desired iframe. This exception triggers when Selenium is unable to find the iframe or if it is switching to an invalid iframe.
+		|-> Solution :-
+			|-> Use wait after the action which triggers to open the iframe to ensure the iframe is loaded properly.
+			|-> Ensure the iframe locator is correct. (Switch between iframe name, id or index and recheck)
+
+6 - NoAlertPresentException() : This exception occurs when Selenium tries to switch to an alert box which is not available on the web page which means the driver is switching to an invalid or non-existing Alert pop up. Like iframe, the driver first needs to switch to the desired Alert box to interact with it and then perform actions on it such as clicking on OK/ Submit/ Cancel button or fetching Alert message.
+		|-> Solution :-
+			|-> Use wait after the action which triggers to open the Alert to ensure it is loaded properly before interacting.
+			|-> Ensure alert locator is correct and visible on DOM by inspected browser. Try with different alert locators.
+
+7 - NoSuchWindowException() : Selenium throws this exception when the WebDriver cannot find the desired browser window or tab using the specified window handle or name. This may occur when the window browser or tab we are attempting to work with is either not present, has been closed during the execution or is not completely loaded.
+		|-> Solution :-
+			|-> Ensure that the window handle or name being used is accurate.
+			|-> Wait for the browser window or tab to completely load and then switch the WebDriver to the desired window instance.
+
+8 - StaleElementReferenceException() : This exception pops up when the element that was referenced by the locator is no longer present in the DOM or has become stale. It is a runtime exception that occurs when the page gets dynamically loaded, deleting the referenced element completely from the DOM, so that it becomes stale.
+		|-> Solution :-
+			|-> Refresh the page before accessing the element that causes StaleElementException.
+			|-> Use try-catch block to handle the exception and attempt to locate the element again in the catch block.
+
+9 - SessionNotFoundException() : SessionNotFoundException will occur when the Webdriver is trying to perform actions on the web application after the browser is closed or when the browser session is not available.
+		|-> Solution :-
+			|-> To handle such exceptions, revisit the code and check if the code is not accidentally closing the browser.
+			|-> make sure that the browser remains active throughout the execution and should be closed only at the end of the execution.
+
+10 - TimeoutException() :  In Selenium, TimeOutException occurs when a command takes longer than the wait time to avoid the ElementNotVisible Exception. Due to certain environment conditions such as low internet speed or web application taking more time than usual to completely load, the element to be interacted with does not load. And in such conditions when the WebDriver tries to find the element on the webpage, TimeoutException occurs.
+		|-> Solution :-
+			|-> Check the load time of the web element manually and add wait accordingly.
+			|-> Add explicit wait using JavaScript executor until the page is loaded.
+			|-> Try using some other property to locate the element such as CSS Selector or Xpath.
+
+11 - WebDriverException() : This exception occurs when the WebDriver is acting immediately after closing the driver session.
+		|-> Solution :-
+			|-> Use driver.close() after the completion of all tests at the suite level and not at the test level.
+			|-> If using TestNG, use driver.close() in @AfterSuite and not in @AfterTest.
+
+
+
+
+
+Handling Exceptions In Selenium WebDriver
+
+Try-Catch : This method can catch Exceptions by using a combination of the try and catch keywords. Try indicates the start of the block, and Catch is placed at the end of the try block to handle or resolve the Exception. The code that is written within the Try/Catch block is referred to as “protected code”.
+	|-----------------------------------------------|
+	|						|
+	| Syntax :- 					|
+	| try{ 						|
+	|	// some code 				|
+	| }						|
+	| catch(Exception e){				|
+	|	// code for handling exceptions		|
+	| }						|
+	|						|
+	|-----------------------------------------------|
+
+Multiple Catch Blocks : There are various types of Exceptions, and one can expect more than one exception from a single block of code. Multiple catch blocks are used to handle every kind of Exception separately with a separate block of code. One can use more than two catch blocks, and there is no limitation on the number of catch blocks.
+	|-----------------------------------------------|
+	|						|
+	| Syntax :-					|
+	| try{ 						|
+	|	// some code 				|
+	| }						|
+	| catch(Exception type1 e1){			|
+	|	// code for handling exception1		|
+	| }						|
+	| catch(Exception type2 e2){			|
+	|	// code for handling exception2		|
+	| }						|
+	|						|
+	|-----------------------------------------------|
+	
+Throw/Throws : When a programmer wants to generate an Exception explicitly, the Throw keyword is used to throw Exception to runtime to handle it. When a programmer is throwing an Exception without handling it, then he/she needs to use Throws keyword in the method signature to enable the caller program to understand the exceptions that might be thrown by the method.
+	|---------------------------------------------------------------|
+	|								|
+	| Syntax :-							|
+	| public static void function() throws Exception{		|
+	| 	try{ 							|
+	|		// some code 					|
+	| 	}							|
+	| 	catch(Exception e){					|
+	|		// code for handling exception			|
+	|		// now throw the exception back to the system	|
+	|								|
+	|		throw(e);					|
+	| 	}							|
+	| }								|
+	|								|
+	|---------------------------------------------------------------|
+
+Multiple Throw Exceptions : One can mention various Exceptions in the throws clause.
+	|-------------------------------------------------------------------------------|
+	|										|
+	| Syntax :-									|
+	| public static void function() throws ExceptionType1, ExceptionType2{		|
+	| 	try{ 									|
+	|		// some code 							|
+	| 	}									|
+	| 	catch(ExceptionType1 e1){						|
+	|		// code for handling exception					|
+	|		// now throw the exception back to the system			|
+	|										|
+	|		throw(e1);							|
+	| 	}									|
+	|	catch(ExceptionType2 e2){						|
+	|		// code for handling exception					|
+	|		// now throw the exception back to the system			|
+	|										|
+	|		throw(e2);							|
+	|	}									|
+	| }										|
+	|										|
+	|-------------------------------------------------------------------------------|
+
+Finally Block : The Finally keyword is used to create a block of code under the try block. This finally code block always executes irrespective of the occurrence of an exception.
+	|-------------------------------------------------------------------------------|
+	|										|
+	| Syntax :-									|
+	| public static void main(String [] args){					|
+	| 	try{ 									|
+	|		// protected code						|
+	| 	}									|
+	| 	catch(ExceptionType1 e1){						|
+	|		// code for handling exception					|
+	| 	}									|
+	|	catch(ExceptionType2 e2){						|
+	|		// code for handling exception					|
+	|	}									|
+	|	catch(ExceptionType e3){						|
+	|		// code for handling exception					|
+	|	}									|
+	|										|
+	|	finally{								|
+	|		// this Finally will always exceute if all catch block fails	|
+	|	}									|
+	| }										|
+	|										|
+	|-------------------------------------------------------------------------------|
+
+
+
+Displaying Exceptions Information in Block Scope Functions using Methods :-
+					|-> printStackTrace(): It prints the stack trace, name of the exception, and other useful description.
+					|-> toString(): It returns a text message describing the exception name and description.
+					|-> getMessage(): It displays the description of the exception.
+
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
+
+Javascript Executor in Selenium
+
+Javascript Execcutor :- Js Executor is an interface which provides mechanism to execute javascript through selenium webdriver.
+	|-> JavascriptExecutor in Selenium, acts as a medium that enables the WebDriver to interact with HTML elements within the browser, since JavaScript is a programming language that interacts with HTML in a browser, and to use this function in Selenium, JavascriptExecutor is required.
+
+
+Types of Actions user can perform using Js Exceuter :-
+	|-> Flashing an element to highlight the element on which test automation is planned.
+	|-> Drawing a border around the element to help developer understand the area of the incurred bug/defect.
+	|-> Capturing the title of the webpage.
+	|-> Click/Submit operations.
+	|-> Generate alert info for test-status in runtime.
+	|-> Refreshing the page.
+	|-> Scrolling horizontally/vertiaclly across the webpages.
+
+Components of JavaScriptExecutor :-
+	|
+	|-> executeScript method : This method executes the test script in the context of the currently selected window or frame. The script in the method runs as an anonymous function.
+	|	|
+	|	V
+	|	if the script has a return statement, following values will be returned :
+	|				|-> For an HTML element, the method returns a WebElement.
+	|				|-> For a decimal, the method returns Long.
+	|				|-> For a non-decimal number, the method returns Long.
+	|				|-> For a Boolean, the method returns Boolean.
+	|				|-> For other cases, the method returns a String.
+	|
+	|-> executeAsyncScript method : This method executes the asynchronous piece of JavaScript on the current window or frame. An asynchronous script will be executed while the rest of the page continues parsing, which enhances responsiveness and application performance.
+
+
+
+
+🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+FrameWorks in Selenium :-
+	|-> Data Driven Test FrameWorks - Apache POI
+	|-> Key Word Driven Test FrameWorks - Robot FrameWork/ Selenium Automation FrameWork with TestNG or JUnit/ pyUnit
+	|-> Hybrid Test FrameWorks - Selenium Automation FrameWork with TestNG or JUnit/ Cucumber/ Robot FrameWork/ Cypress
+	|-> Behaviour Driven Development FrameWorks
+
+

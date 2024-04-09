@@ -1,0 +1,428 @@
+TestNG [Test Suite of Next Generation]
+
+TestNG :- TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.
+
+Features of TestNG :-
+		|-> Annotations.
+		|-> Run your tests in arbitrarily big thread pools with various policies available (all methods in their own thread, one thread per test class, etc…​).
+		|-> Test that your code is multithread safe.
+		|-> Flexible test configuration.
+		|-> Support for data-driven testing (with @DataProvider).
+		|-> Support for parameters.
+		|-> Powerful execution model (no more TestSuite).
+		|-> Supported by a variety of tools and plug-ins (Eclipse, IDEA, Maven, etc…​).
+		|-> Embeds BeanShell for further flexibility.
+		|-> Default JDK functions for runtime and logging (no dependencies).
+		|-> Dependent methods for application server testing.
+
+
+|*******************************************************************************************************|
+|													|
+|	package testNG_repo;										|
+|													|
+|	//import org.junit.Test;									|
+|	import org.testng.annotations.BeforeClass;							|
+|	import org.testng.annotations.Test;								|
+|													|
+|	public class testMod1 {										|
+|													|
+|		/*											|
+|			@Test(priority = 2)								|
+|			public void test1(){								|
+|				System.out.println("test1 performed");					|
+|			}										|
+|			@Test(priority = 1)								|
+|			public void test2(){								|
+|				System.out.println("test2 performed");					|
+|			}										|
+|		*/											|
+|													|
+|			@BeforeClass									|
+|			public void setUp() {								|
+|				// code that will be invoked when this test is instantiated		|
+|				System.out.println("Before Class Test Performed");			|
+|			}										|
+|													|
+|			@Test(groups = {"fast"})							|
+|			public void aFastTest() {							|
+|				System.out.println("Fast test");					|
+|			}										|
+|													|
+|			@Test(groups = {"slow"})							|
+|			public void aSlowTest() {							|
+|				System.out.println("Slow test");					|
+|			}										|
+|		}											|
+|													|
+|*******************************************************************************************************|
+| Before Class Test Performed										|
+| Fast test												|
+| Slow test												|
+|													|
+| ======================================================						|
+| Default Suite												|
+| Total tests run: 2, Passes: 2, Failures: 0, Skips: 0							|
+| ======================================================						|
+|													|
+|*******************************************************************************************************|
+
+
+
+Annotations :- TestNG annotations are unique code identifiers that provide instructions to the framework.
+
+🟠	Annotation Type - Configuration
+	|-> @BeforeSuite :- The annotated method will be run before all tests in this suite have run.
+	|-> @AfterSuite :- The annotated method will be run after all tests in this suite have run.
+	|-> @BeforeTest :- The annotated method will be run before any test method belonging to the classes inside the <test> tag is run.
+	|-> @AfterTest :- The annotated method will be run after all the test methods belonging to the classes inside the <test> tag have run.
+	|-> @BeforeGroups :- The list of groups that this configuration method will run before. This method is guaranteed to run shortly before the first test method that belongs to any of these groups is invoked.
+	|-> @AfterGroups :- The list of groups that this configuration method will run after. This method is guaranteed to run shortly after the last test method that belongs to any of these groups is invoked.
+	|-> @BeforeClass :- The annotated method will be run before the first test method in the current class is invoked.
+	|-> @AfterClass :- The annotated method will be run after all the test methods in the current class have been run.
+	|-> @BeforeMethod :- The annotated method will be run before each test method.
+	|-> @AfterMethod :- The annotated method will be run after each test method.
+
+	|*******************************************************************************|
+	| Heirarchy of Annotations in TestNG						|
+	| ——————————————————————————————————						|
+	|										|
+	| |--------------|								|
+	| | @BeforeSuite |----|								|
+	| |--------------|    |								|
+	|		      V								|
+	| 		|-------------|							|
+	| 		| @BeforeTest |----|						|
+	| 		|-------------|    |						|
+	|				   V						|
+	| 				|--------------|				|
+	| 				| @BeforeClass |----|				|
+	| 				|--------------|    |				|
+	|						    V				|
+	| 						|---------------|		|
+	| 						| @BeforeMethod |----|		|
+	| 						|---------------|    |		|
+	|								     V		|
+	|								|----------|	|
+	| 								|   TEST   |	|
+	| 								|----------|	|
+	|								     |		|
+	|						|--------------|     |		|
+	|						| @AfterMethod | <---|		|
+	|						|--------------|		|
+	|						    |				|
+	|				|-------------|     |				|
+	|				| @AfterClass | <---|				|
+	|				|-------------|					|
+	|				   |						|
+	|		|------------|     |						|
+	|		| @AfterTest | <---|						|
+	|		|------------|							|
+	|		      |								|
+	| |-------------|     |								|
+	| | @AfterSuite | <---|								|
+	| |-------------|								|
+	|										|
+	|*******************************************************************************|
+
+	Configuration Annotations
+		|
+		|
+		V
+		Annotation Attributes : ▫️alwaysRun - For before methods (beforeSuite, beforeTest, beforeTestClass and beforeTestMethod, but not beforeGroups): If set to true, this configuration method will be run regardless of what groups it belongs to. For after methods (afterSuite, afterClass, …​): If set to true, this configuration method will be run even if one or more methods invoked previously failed or was skipped.
+					▫️dependsOnGroups - The list of groups this method depends on.
+					▫️dependsOnMethods - The list of methods this method depends on.
+					▫️enabled - Whether methods on this class/method are enabled.
+					▫️groups - The list of groups this class/method belongs to.
+					▫️inheritGroups - If true, this method will belong to groups specified in the @Test annotation at the class level.
+					▫️onlyForGroups - Only for @BeforeMethod and @AfterMethod. If specified, then this setup/teardown method will only be invoked if the corresponding test method belongs to one of the listed groups.
+
+🟠	Annotation Type - Data Retrieving
+	|-> @DataProvider :- Marks a method as supplying data for a test method. The annotated method must return an Object[][] where each Object[] can be assigned the parameter list of the test method. The @Test method that wants to receive data from this DataProvider needs to use a dataProvider name equals to the name of this annotation.
+
+	Data Retrieving Annoations
+		|
+		|
+		V
+		Annotation Attributes : ▫️name : The name of this data provider. If it’s not supplied, the name of this data provider will automatically be set to the name of the method.
+					▫️parallel : If set to true, tests generated using this data provider are run in parallel. Default value is false.
+
+🟠	Annotation Type - Dynamic Test Defination
+	|-> @Factory :- Marks a method as a factory that returns objects that will be used by TestNG as Test classes. The method must return Object[].
+				|-> @Factory annotated method allows tests to be created at runtime depending on certain data-sets or conditions.
+
+	|***************************************************************|
+	| Syntax Example :-						|
+	| import org.testng.annotations.Test;				|
+	| import org.testng.annotations.Factory;				|
+	|								|
+	| public class TestAnnotationFactory {				|
+	|								|
+	| 	@Factory						|
+	|	public Object[] factoryMethod() {				|
+	|		return new Object[]{				|
+	|			new SimpleTestFactory(),			|
+	|			new SimpleTestFactory()			|
+	|		};						|
+	|	}							|
+	| }								|
+	|								|
+	|***************************************************************|
+
+
+🟠	Annotation Type - Runtime Data-Sets
+	|-> @Listeners :- Defines listeners on a test class.
+
+	Runtime Data-Sets Annotations
+		|
+		|
+		V
+		Annotation Attributes :	▫️value : An array of classes that extend org.testng.ITestNGListener.
+
+
+🟠	Annotation Type - Parameterized
+	|-> @Parameters :- Describes how to pass parameters to a @Test method.
+
+	Parameterized Annotations
+		|
+		|
+		V
+		Annotation Attributes :	▫️value : The list of variables used to fill the parameters of this method.
+
+🟠	Annotation Type - Test Modules
+	|-> @Test :- Marks a class or a method as part of the test.
+			|-> @Test annotation in TestNG is used to identify a test method (No need to use main method)
+
+	Test Modules Annotations
+		|
+		|
+		V
+		Annotation Attributes :	▫️alwaysRun : If set to true, this test method will always be run even if it depends on a method that failed.
+					▫️dataProvider : The name of the data provider for this test method.
+					▫️dataProviderClass : The class where to look for the data provider. If not specified, the data provider will be looked on the class of the current test method or one of its base classes. If this attribute is specified, the data provider method needs to be static on the specified class.
+					▫️dependsOnGroups : The list of groups this method depends on.
+					▫️dependsOnMethods : The list of methods this method depends on.
+					▫️description : The description for this method.
+					▫️enabled : Whether methods on this class/method are enabled.
+					▫️expectedExceptions : The list of exceptions that a test method is expected to throw. If no exception or a different than one on this list is thrown, this test will be marked a failure.
+					▫️groups : The list of groups this class/method belongs to.
+					▫️invocationCount : The number of times this method should be invoked.
+					▫️invocationTimeOut : The maximum number of milliseconds this test should take for the cumulated time of all the invocationcounts. This attribute will be ignored if invocationCount is not specified.
+					▫️priority : The priority for this test method. Lower priorities will be scheduled first.
+					▫️successPercentage : The percentage of success expected from this method.
+					▫️singleThreaded : If set to true, all the methods on this test class are guaranteed to run in the same thread, even if the tests are currently being run with parallel="methods". This attribute can only be used at the class level and it will be ignored if used at the method level. Note: this attribute used to be called sequential (now deprecated).
+					▫️timeOut : The maximum number of milliseconds this test should take.
+					▫️threadPoolSize : The size of the thread pool for this method. The method will be invoked from multiple threads as specified by invocationCount. NOTE: this attribute is ignored if invocationCount is not specified.
+
+
+
+|*******************************************************|
+| Note : 						|
+| Running TestNG :-  					|
+|	|-> Command Line				|
+|	|-> Ant						|
+|	|-> Eclipse					|
+|	|-> IntelliJ IDEA				|
+|							|
+|*******************************************************|
+		|
+		|--->	|*******************************************************************************************************|
+			| Assuming User wants to run testNG using Command Line - Documentation for Command Line Parameters 	|
+			| https://testng.org/#_command_line_parameters 								|
+			|*******************************************************************************************************|
+									|
+|*******************************************************|		|
+| Note : 						|	<-------|
+| TestNG on IntelliJ IDEA - Documentation 		|
+| https://www.jetbrains.com/help/idea/testng.html 	|
+|*******************************************************|
+
+
+
+System Properties :-
+ "testng.test.classpath" : A semicolon separated series of directories that contain your test classes.
+	|	|-> If this property is set, TestNG will use it to look for your test classes instead of the class path. This is convenient if you are using the package tag in your XML file and you have a lot of classes in your classpath, most of them not being test classes.
+	|
+	|----> "java org.testng.TestNG -groups windows,linux -testclass org.test.MyTest"
+**ANT TASK INVOLVED
+The ant task and testng.xml allow you to launch TestNG with more parameters (methods to include, specifying parameters, etc…​), so you should consider using the command line only when you are trying to learn about TestNG and you want to get up and running quickly.
+
+Running tests from within a test jar - Maven-jar-assembly-plugin
+	|-> TestNG can be provided with a jar that contains your test classes and you can execute the tests from within it.
+
+	|***********************************************************************|
+	| 			=== Directory Structure ===			|
+	| ⚪ 									|
+	|  |--- pom.xml 							|
+	|  |--- src								|
+	|  	|--- test							|
+	|		|--- java						|
+	|		|	|--- org					|
+	|		|	       |--- testNG				|
+	|		|			|--- FirstTestCase.java		|
+	|		|			|--- SecondTestCase.java	|
+	|		|							|
+	|		|--- resources						|
+	|			|--- suites					|
+	|			|	|--- suite1.xml				|
+	|			|	|--- suite2.xml				|
+	|			|						|
+	|			|--- test-jar-with-dependencies.xml		|
+	|									|
+	|***********************************************************************|
+
+The relevant <dependencies> section and the <plugins> section will look like below:
+--- pom.xml ---
+<dependencies>
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.9.0</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.3.0</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>test-jar</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.6.0</version>
+            <configuration>
+                <descriptors>
+                    <descriptor>src/test/resources/test-jar-with-dependencies.xml</descriptor>
+                </descriptors>
+                <archive>
+                    <!-- We would like to create an executable jar so that we can execute it directly -->
+                    <manifest>
+                        <mainClass>org.testng.TestNG</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>single</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+
+The contents of src/test/resources/test-jar-with-dependencies.xml will look like below:
+--- test-jar-with-dependencies.xml ---
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd
+https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 ">
+    <id>test-jar-with-dependencies</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useProjectAttachments>true</useProjectAttachments>
+            <unpack>true</unpack>
+            <scope>test</scope>
+        </dependencySet>
+    </dependencySets>
+</assembly>
+
+Test methods :- Test methods are annotated with @Test. Methods annotated with @Test that happen to return a value will be ignored, unless you set allow-return-values to true in your testng.xml
+	|---> 	<suite allow-return-values="true">
+		<!-- rest of the contents ignored for brevity -->
+		</suite>
+				OR
+		<test allow-return-values="true">
+		<!-- rest of the contents ignored for brevity -->
+		</test>
+
+
+Test groups :- Groups are specified in your testng.xml file and can be found either under the <test> or <suite> tag. Groups specified in the <suite> tag apply to all the <test> tags underneath. Note that groups are accumulative in these tags: if you specify group "a" in <suite> and "b" in <test>, then both "a" and "b" will be included.
+	Test Groups Categories :- 1) Check-in tests. These tests should be run before you submit new code. They should typically be fast and just make sure no basic functionality was broken.
+				  2) Functional tests. These tests should cover all the functionalities of your software and be run at least once a day, although ideally you would want to run them continuously.
+
+|***************************************************************************************|
+| Note :										|
+| TestNG allows you to perform sophisticated groupings of test methods.			|
+| Not only can you declare that methods belong to groups, but you can also		|
+| specify groups that contain other groups. Then TestNG can be invoked and		|
+| asked to include a certain set of groups (or regular expressions) while excluding	|
+| another set. This gives you maximum flexibility in how you partition your tests	|
+| and doesn't require you to recompile anything if you want to run two different	|
+| sets of tests back to back.								|
+|***************************************************************************************|
+
+
+|*******************************************************|
+| Test1 : 						|
+| public class Test1 {					|
+|	@Test(groups = { "functest", "checkintest" })	|
+|	public void testMethod1() {			|
+|		// Code implementation			|
+|	}						|
+|							|
+|	@Test(groups = {"functest", "checkintest"} )	|
+|	public void testMethod2() {			|
+|		// Code implementation			|
+|	}						|
+|							|
+|	@Test(groups = { "functest" })			|
+|	public void testMethod3() {			|
+|		// Code implementation			|
+|	}						|
+| }							|
+|							|
+|*******************************************************|
+	|
+	|--->	Invoking testNG	--------|
+					|
+				    	v
+			|*******************************************************|
+			| <test name="Test1">					|
+			|	<groups>					|
+			|		<run>					|
+			|			<include name="functest"/>	|
+			|			// to launch only in WINDOWS	|
+			|			<include name="	windows.*"/>	|
+			|		</run>					|
+			|	</groups>					|
+			|	<classes>					|
+			|		<class name="example1.Test1"/>		|
+			|	</classes>					|
+			| </test>						|
+			|*******************************************************|
+
+
+
+Method Groups :- Method Groups allow you to perform groupings of different test methods. Grouping of test methods is required when you want to access the test methods of different classes. Not only you can declare the methods within a specified group, you can also declare another group within a specified group.
+	Syntax :	<test name="Test1">
+				<classes>
+					<class name="example1.Test1">
+						<methods>
+							<include name=".*enabledTestMethod.*"/>
+							<exclude name=".*brokenTestMethod.*"/>
+						</methods>
+					</class>
+				</classes>
+			</test>
+
+🟠 Groups of Groups
+
+
+
